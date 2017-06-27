@@ -1,0 +1,36 @@
+<h2>Listing visits</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Place</th>
+      <th>State</th>
+      <th>Description</th>
+      <th>Rating</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visit <- @visits do %>
+    <tr>
+      <td><%= visit.date %></td>
+      <td><%= visit.time %></td>
+      <td><%= visit.place %></td>
+      <td><%= visit.state %></td>
+      <td><%= visit.description %></td>
+      <td><%= visit.rating %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: visit_path(@conn, :show, visit), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: visit_path(@conn, :edit, visit), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: visit_path(@conn, :delete, visit), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New visit", to: visit_path(@conn, :new) %>

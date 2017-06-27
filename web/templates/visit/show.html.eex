@@ -1,0 +1,38 @@
+<h2>Show visit</h2>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @visit.date %>
+  </li>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @visit.time %>
+  </li>
+
+  <li>
+    <strong>Place:</strong>
+    <%= @visit.place %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @visit.state %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @visit.description %>
+  </li>
+
+  <li>
+    <strong>Rating:</strong>
+    <%= @visit.rating %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: visit_path(@conn, :edit, @visit) %>
+<%= link "Back", to: visit_path(@conn, :index) %>

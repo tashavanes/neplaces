@@ -7,7 +7,7 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :neplaces, Neplaces.Endpoint,
-  http: [port: 4040],
+  https: [port: 5443, keyfile: "priv/domain.key", certfile: "priv/chained.pem"],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
